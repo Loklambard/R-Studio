@@ -1,0 +1,37 @@
+---
+title: "R markdown of More plots on ggplot"
+author: "Parth"
+date: "2024-06-24"
+output: html_document
+---
+# R Markdown On ggplot2
+
+## Setting up my environment
+Notes:Setting up my r environment by loading `ggplot2` and `plamerpenguins` 
+packages:
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+```
+
+## Making the plots
+```{r}
+ggplot(data=penguins)+
+  geom_smooth(mapping=aes(x=flipper_length_mm,y=body_mass_g)) + geom_point(mapping=aes(x=flipper_length_mm,y=body_mass_g))
+ggplot(data=penguins)+
+  geom_smooth(mapping=aes(x=flipper_length_mm,y=body_mass_g,linetype = species))
+ggplot(data=penguins)+
+  geom_jitter(mapping=aes(x=flipper_length_mm,y=body_mass_g,linetype = species))
+
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut,color=cut))
+
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut,fill=cut))
+
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut,fill=clarity))
+```
+
+## Conclusion
+The different types of plot have been studied.
